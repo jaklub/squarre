@@ -1,0 +1,64 @@
+{
+  "players" : [
+	  {
+	    "player" : {
+	      "name" : "Jakob",
+	      "id" : "1"
+	    }
+	  },
+	  {
+	    "player" : {
+	      "name" : "Niklas",
+	      "id" : "2"
+	    }
+	  },
+	  {
+	    "player" : {
+	      "name" : "Olof",
+	      "id" : "3"
+	    }
+	  }	  	  	  
+	],
+  "games" : [
+ 		{
+	    	"game" : {
+				"id" : 1,
+				"date" : "2014-01-01",
+		     	"results" : [
+		     		{
+		        		"player" : {
+		          			"id" : 1,
+		          			"score" : 9
+		          		}
+		        	},
+		     		{
+		        		"player" : {
+		          			"id" : 2,
+		          			"score" : 8
+		          		}
+		        	}
+		        ]
+		    }
+		 },
+		 {
+	    	"game" : {
+				"id" : 2,
+				"date" : "2014-01-02",
+		     	"results" : [
+		     		{
+		        		"player" : {
+		          			"id" : 2,
+		          			"score" : 9
+		          		}
+		        	},
+		     		{
+		        		"player" : {
+		          			"id" : 3,
+		          			"score" : 8
+		          		}
+		        	}
+		        ]
+		    }
+      	}
+    ]   
+}

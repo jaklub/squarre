@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html ng-app="squarre">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">	
+	<script type='text/javascript' src='//code.jquery.com/jquery-2.1.0.min.js'></script>
+	<script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+	<script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.11/firebase.js'></script>
+	<script type='text/javascript' src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
+	<script type='text/javascript' src='/squarre.js'></script>
+</head>
+<body >
+	<div class="sq-new-game" ng-controller="PlayersController">
+		<!--<input type="text" ng-model="name" placeholder="Nameeee">
+		<input type="text" ng-model="msg" ng-keydown="addMessage($event)" placeholder="Message...">-->
+		<select ng-model="player1" class="sq-new-game-player1">
+			<option value="">Player 1</option>
+			<option data-ng-repeat="player in players" value="{{player.id}}">{{player.name}}</option>
+		</select>&nbsp;
+		<input type="text" ng-model="Points1" placeholder="Points player1">		
+		<br/>
+		<select ng-model="player2" class="sq-new-game-player2">
+			<option value="">Player 2</option>
+			<option data-ng-repeat="player in players" value="{{player.id}}">{{player.name}}</option>
+		</select>&nbsp;
+		<input type="text" ng-model="points2" placeholder="Points player2">		
+		<button ng-click="saveGame($event)">Save game</button>		
+
+	</div>
+
+	<ul class="sq-game-list" ng-controller="GamesController">
+		<li class="sq-game-list-item" ng-repeat="game in games | orderByPriority | orderBy: 'dateTime' : true | limitTo:10" >
+			<div class="sq-game-info"><span class="sq-game-date-label">Date:<span class="sq-game-date">&nbsp;</span>{{game.dateTime}}</span></div>
+			<div class="sq-game-results" ng-repeat="player in game.players"><span>Player:&nbsp;{{player.id}}</span><span>, Points:&nbsp;{{player.points}}</span></div>
+		</li>
+	</ul>
+
+
+</body>
+</html>
+
