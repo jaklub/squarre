@@ -1,0 +1,9 @@
+.squarre-template{
+	margin-top: 0px;
+	padding-top: 15px;
+}
+
+.squarre-template .row {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
