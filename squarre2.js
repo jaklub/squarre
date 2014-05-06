@@ -37,17 +37,8 @@
 		$scope.players = $firebase(playersRef);
 		$scope.games = $firebase(gamesRef);
 
-		$scope.pointsArrayp1 = [{"name":"0","value":"0"},{"name":"1","value":"1"}];
-		$scope.pointsArrayp2 = [{"name":"0","value":"0"},{"name":"1","value":"1"}];
 
-		$scope.score1 = $scope.pointsArrayp1[0];
-
-		$scope.pointsArray = [0,1,2,3];
-		//$scope.point = $scope.pointsArray[0];
-
-		//$scope.userInfo = 'User ID: ' + user.id + ', Provider: ' + user.provider + ', e-mail: ' + user.email;
-
-		$scope.player1Id = $scope.players[0];
+		$scope.pointsArray = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
 		
 
 

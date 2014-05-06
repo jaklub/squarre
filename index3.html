@@ -37,7 +37,7 @@
   			<div class="collapse navbar-collapse">
   				<ul class="nav navbar-nav">
   					<li class="active"><a href="#">Games</a></li>
-  					<li><a href="players.html">Players</a></li>
+  					<li><a href="#players">Players</a></li>
   					<li><a href="#stats">Statistics</a></li>
   				</ul>
   			</div><!--/.nav-collapse -->
@@ -62,14 +62,14 @@
 						<label>Name</label>
 						<select ng-model="player1Id" class="form-control sq-new-game-player1">
 							<option value="">Player 1</option>
-							<option ng-repeat="(name, item)  in players" value="{{name}}">{{item.name}}</option>
+							<option ng-repeat="player in players" value="{{player.id}}">{{player.name}}</option>
 						</select>
 					</div>
 					<div class="col-xs-6">
 						<label>Name</label>
 						<select ng-model="player2Id" class="form-control sq-new-game-player1">
 							<option value="">Player 2</option>
-							<option ng-repeat="(name, item)  in players" value="{{name}}">{{item.name}}</option>
+							<option ng-repeat="player in players" value="{{player.id}}">{{player.name}}</option>
 						</select>
 					</div>
 				</div>	
@@ -99,18 +99,11 @@
 					</div>
 				</div>
 			</div> <!-- /New Game-->
-			<br/>
-			<br/>
+
 			<div>  <!-- Game list-->
 				<ul class="list-unstyled">
-			  		<li ng-repeat="game in games | orderByPriority | orderBy: 'dateTime' : true | limitTo:10"><div>Date: {{game.dateTime}}</div>
-			  			<span ng-repeat="player in game.players">
-			  				<!-- <div>Player: {{player.id}}, Points: {{player.points}}, PlayerName: {{GetOne(player.id)}} </div></span><br/> -->
-			  				<div>Player: {{player.id}}, Points: {{player.points}}, PlayerName: {{GetOne(player.id)}}
-			  				</div>
-			  			</span>
-			  			<br/>
-
+			  		<li ng-repeat="game in games" ng-animate=" 'animate' "><div>Date: {{game.dateTime}}</div>
+			  			<span ng-repeat="player in game.players"><div>Player: {{player.id}}, Points: {{player.points}} </div></span><br/>
 			  		</li>
 				</ul>
 			</div>  <!-- /Game list-->
@@ -122,14 +115,14 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script type='text/javascript' src='//code.jquery.com/jquery-2.1.0.min.js'></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <!--<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>-->
     <!--<script type='text/javascript' src='//code.angularjs.org/X.Y.Z/angular-route.js'></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
     <script src='https://cdn.firebase.com/js/client/1.0.11/firebase.js'></script>
     <script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.js"></script>
     <!--<script src='/ui-bootstrap-0.11.0.js'></script>-->
     <!--<script src='/ui-bootstrap-tpls-0.11.0.js'></script>-->
-    <script src='/squarre4.js'></script>
+    <script src='/squarre3.js'></script>
     <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.4.1/firebase-simple-login.js'>
 </script>
 
