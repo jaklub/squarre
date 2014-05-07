@@ -1,0 +1,278 @@
+{
+  "players" : {
+    "-JMIPYl5lOLbT06hghJy" : {
+      "name" : "Niklas"
+    },
+    "-JMIPWyCL4M_IAtT49th" : {
+      "name" : "Jakob"
+    },
+    "-JMIPZxtLEH6Fi7kHnSy" : {
+      "name" : "Olof"
+    }
+  },
+  "games" : {
+    "-JMMXTZKsWCz9klUK2zb" : {
+      "players" : [ {
+        "points" : 9,
+        "id" : "-JMIPWyCL4M_IAtT49th"
+      }, {
+        "points" : 7,
+        "id" : "-JMIPZxtLEH6Fi7kHnSy"
+      } ],
+      "dateTime" : "2014-05-07 18:35:12",
+      "id" : -1
+    },
+    "-JMMTk_z6dz-uHLjHTvR" : {
+      "players" : [ {
+        "points" : 9,
+        "id" : "-JMIPWyCL4M_IAtT49th"
+      }, {
+        "points" : 4,
+        "id" : "-JMIPZxtLEH6Fi7kHnSy"
+      } ],
+      "dateTime" : "2014-05-07 18:18:57",
+      "id" : -1
+    },
+    "-JMMYXDX4xmo01Fepstw" : {
+      "players" : [ {
+        "points" : 9,
+        "id" : "-JMIPWyCL4M_IAtT49th"
+      }, {
+        "points" : 5,
+        "id" : "-JMIPYl5lOLbT06hghJy"
+      } ],
+      "dateTime" : "2014-05-07 18:39:49",
+      "id" : -1
+    },
+    "-JMMW6XUtosROJ3xOtZg" : {
+      "players" : [ {
+        "points" : 9,
+        "id" : "-JMIPYl5lOLbT06hghJy"
+      }, {
+        "points" : 6,
+        "id" : "-JMIPZxtLEH6Fi7kHnSy"
+      } ],
+      "dateTime" : "2014-05-07 18:29:16",
+      "id" : -1
+    },
+    "-JMM_bmzUnoVUblkxd-t" : {
+      "players" : [ {
+        "points" : 6,
+        "id" : "-JMIPZxtLEH6Fi7kHnSy"
+      }, {
+        "points" : 9,
+        "id" : "-JMIPWyCL4M_IAtT49th"
+      } ],
+      "dateTime" : "2014-05-07 18:48:56",
+      "id" : -1
+    },
+    "-JMI_PdxNTl13O3WrMXz" : {
+      "players" : [ {
+        "points" : 4,
+        "id" : "-JMIPWyCL4M_IAtT49th"
+      }, {
+        "points" : 7,
+        "id" : "-JMIPZxtLEH6Fi7kHnSy"
+      } ],
+      "dateTime" : "2014-05-07 00:09:32",
+      "id" : -1
+    },
+    "-JMMihWEOS1P1JJd431N" : {
+      "players" : [ {
+        "points" : 12,
+        "id" : "-JMIPZxtLEH6Fi7kHnSy"
+      }, {
+        "points" : 14,
+        "id" : "-JMIPYl5lOLbT06hghJy"
+      } ],
+      "dateTime" : "2014-05-07 19:28:38",
+      "id" : -1
+    },
+    "-JMMeINxjtvz7c1xcBz6" : {
+      "players" : [ {
+        "points" : 9,
+        "id" : "-JMIPYl5lOLbT06hghJy"
+      }, {
+        "points" : 1,
+        "id" : "-JMIPWyCL4M_IAtT49th"
+      } ],
+      "dateTime" : "2014-05-07 19:09:23",
+      "id" : -1
+    },
+    "-JMMf-RsjXa0w2wl6HCV" : {
+      "players" : [ {
+        "points" : 9,
+        "id" : "-JMIPYl5lOLbT06hghJy"
+      }, {
+        "points" : 4,
+        "id" : "-JMIPZxtLEH6Fi7kHnSy"
+      } ],
+      "dateTime" : "2014-05-07 19:12:27",
+      "id" : -1
+    },
+    "-JMMbFZ8s1v3G2DFVrgO" : {
+      "players" : [ {
+        "points" : 12,
+        "id" : "-JMIPYl5lOLbT06hghJy"
+      }, {
+        "points" : 14,
+        "id" : "-JMIPWyCL4M_IAtT49th"
+      } ],
+      "dateTime" : "2014-05-07 18:56:06",
+      "id" : -1
+    },
+    "-JMMcFsXaizh-eBV7Foh" : {
+      "players" : [ {
+        "points" : 9,
+        "id" : "-JMIPZxtLEH6Fi7kHnSy"
+      }, {
+        "points" : 7,
+        "id" : "-JMIPYl5lOLbT06hghJy"
+      } ],
+      "dateTime" : "2014-05-07 19:00:29",
+      "id" : -1
+    },
+    "-JMIZlb1qJLq9NralEiz" : {
+      "players" : [ {
+        "points" : 4,
+        "id" : "-JMIPWyCL4M_IAtT49th"
+      }, {
+        "points" : 6,
+        "id" : "-JMIPZxtLEH6Fi7kHnSy"
+      } ],
+      "dateTime" : "2014-05-07 00:06:44",
+      "id" : -1
+    },
+    "-JMIabfN65vF99_j0taQ" : {
+      "players" : [ {
+        "id" : "-JMIPYl5lOLbT06hghJy"
+      }, {
+        "points" : 9,
+        "id" : "-JMIPYl5lOLbT06hghJy"
+      } ],
+      "dateTime" : "2014-05-07 00:14:48",
+      "id" : -1
+    },
+    "-JMMihhENOgBH_ktRAIg" : {
+      "players" : [ {
+        "points" : 12,
+        "id" : "-JMIPZxtLEH6Fi7kHnSy"
+      }, {
+        "points" : 14,
+        "id" : "-JMIPYl5lOLbT06hghJy"
+      } ],
+      "dateTime" : "2014-05-07 19:28:39",
+      "id" : -1
+    },
+    "-JMMiga3fo9b-hiMsiFR" : {
+      "players" : [ {
+        "points" : 12,
+        "id" : "-JMIPZxtLEH6Fi7kHnSy"
+      }, {
+        "points" : 14,
+        "id" : "-JMIPYl5lOLbT06hghJy"
+      } ],
+      "dateTime" : "2014-05-07 19:28:35",
+      "id" : -1
+    },
+    "-JMMg2eI2augsAbq4iZm" : {
+      "players" : [ {
+        "points" : 9,
+        "id" : "-JMIPWyCL4M_IAtT49th"
+      }, {
+        "points" : 6,
+        "id" : "-JMIPZxtLEH6Fi7kHnSy"
+      } ],
+      "dateTime" : "2014-05-07 19:17:03",
+      "id" : -1
+    },
+    "-JMITXATDg2OWaIQ5qEP" : {
+      "players" : [ {
+        "points" : 3,
+        "id" : "-JMIPWyCL4M_IAtT49th"
+      }, {
+        "points" : 2,
+        "id" : "-JMIPYl5lOLbT06hghJy"
+      } ],
+      "dateTime" : "2014-05-06 23:39:27",
+      "id" : -1
+    },
+    "-JMMZJ7LC2Zg7MGPEVjQ" : {
+      "players" : [ {
+        "points" : 9,
+        "id" : "-JMIPZxtLEH6Fi7kHnSy"
+      }, {
+        "points" : 5,
+        "id" : "-JMIPYl5lOLbT06hghJy"
+      } ],
+      "dateTime" : "2014-05-07 18:43:13",
+      "id" : -1
+    },
+    "-JMITYMFhbGk-qjceQKY" : {
+      "players" : [ {
+        "points" : 3,
+        "id" : "-JMIPWyCL4M_IAtT49th"
+      }, {
+        "points" : 2,
+        "id" : "-JMIPZxtLEH6Fi7kHnSy"
+      } ],
+      "dateTime" : "2014-05-06 23:39:32",
+      "id" : -1
+    },
+    "-JMIZxUluBfAU8OyOAQQ" : {
+      "players" : [ {
+        "points" : 5,
+        "id" : "-JMIPYl5lOLbT06hghJy"
+      }, {
+        "points" : 3,
+        "id" : "-JMIPYl5lOLbT06hghJy"
+      } ],
+      "dateTime" : "2014-05-07 00:07:32",
+      "id" : -1
+    },
+    "-JMMgvItPRyCSgy4WXP4" : {
+      "players" : [ {
+        "points" : 9,
+        "id" : "-JMIPWyCL4M_IAtT49th"
+      }, {
+        "points" : 5,
+        "id" : "-JMIPYl5lOLbT06hghJy"
+      } ],
+      "dateTime" : "2014-05-07 19:20:51",
+      "id" : -1
+    },
+    "-JMMUs7KU6rQJPhLkyeZ" : {
+      "players" : [ {
+        "points" : 8,
+        "id" : "-JMIPWyCL4M_IAtT49th"
+      }, {
+        "points" : 10,
+        "id" : "-JMIPYl5lOLbT06hghJy"
+      } ],
+      "dateTime" : "2014-05-07 18:23:50",
+      "id" : -1
+    },
+    "-JMMiin1yNUZ2sgchQ0-" : {
+      "players" : [ {
+        "points" : 12,
+        "id" : "-JMIPZxtLEH6Fi7kHnSy"
+      }, {
+        "points" : 14,
+        "id" : "-JMIPYl5lOLbT06hghJy"
+      } ],
+      "dateTime" : "2014-05-07 19:28:44",
+      "id" : -1
+    },
+    "-JMMdPZGcoyF3Mk1AS-J" : {
+      "players" : [ {
+        "points" : 6,
+        "id" : "-JMIPZxtLEH6Fi7kHnSy"
+      }, {
+        "points" : 9,
+        "id" : "-JMIPWyCL4M_IAtT49th"
+      } ],
+      "dateTime" : "2014-05-07 19:05:31",
+      "id" : -1
+    }
+  }
+}

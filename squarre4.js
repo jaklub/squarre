@@ -3,7 +3,7 @@
 	//angular.module("squarre", ['ui.bootstrap',"firebase"]);
 	// var app = angular.module("squarre", ['ui.bootstrap', "firebase"])
 	var squarre = angular.module("squarre", ['firebase']);
-	squarre.factory("GamesService", ["$firebase", function($firebase) {
+	squarre.factory("GamesService", ["$firebase", "$rootScope", "$timeout", function($firebase, $rootScope, $timeout) {
 			var gamesRef = new Firebase("https://squarre.firebaseio.com/games");
 			var playersRef = new Firebase("https://squarre.firebaseio.com/players");
 			var playersNameRef = new Firebase("https://squarre.firebaseio.com/players");
@@ -35,8 +35,18 @@
 					// // $scope.$apply();
 					// return player.name;
 					return $firebase(playersNameRef.child(playerId));
-				}
+				},
+				getPlayerNames: function(playerId) {
+					var players = [];
 
+					playersRef.on("child_added", function(snapshot) {
+						$timeout(function(){
+							players.push(snapshot.val());
+							console.log(JSON.stringify(snapshot.val(),null,2));
+						},0);
+					});
+					return players;				
+				}
 			}
 		}])
 		.controller("GamesController", ["$scope", "GamesService",
@@ -45,7 +55,13 @@
 				$scope.games = service.getGames();
 				$scope.players = service.getPlayers();
 				$scope.pointsArray = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];				
-				// $scope.$apply();	
+				// $scope.$apply();
+				$scope.playerId = "-JMIPZxtLEH6Fi7kHnSy";
+				$scope.playerName = service.getPlayerName($scope.playerId);	
+
+				$scope.playerNames = service.getPlayerNames();	
+
+				$scope.temp = {};
 
 				$scope.saveGame = function(e) {
 					var newDateTime = getDateTime();
@@ -78,9 +94,13 @@
 				$scope.GetOne = function(param){
 					// var temp = service.getPlayerName(param);
 					$scope.index = $scope.index +1;
-					var temp = $scope.players[param];
-					// console.log("PlayerId: " + param + ",PlayerName: " + temp.name + ",index: " + $scope.index);
-					return  temp.name;
+					// $scope.temp = $scope.players[param];
+					//$scope.temp = $scope.players.$child(param);
+					//$scope.temp = $scope.playerNames.$child(param);
+					// console.log("PlayerId: " + param + ",PlayerName: " + $scope.temp.name + ",index: " + $scope.index);
+					console.log("PlayerId: " + param + ",PlayerName: " + ",index: " + $scope.index);
+					// return  $scope.temp.name;
+					return "heep";
 					// return "playerid = " + service.getPlayerName(param);
 				}	
 

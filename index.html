@@ -104,9 +104,9 @@
 			<div>  <!-- Game list-->
 				<ul class="list-unstyled">
 			  		<li ng-repeat="game in games | orderByPriority | orderBy: 'dateTime' : true | limitTo:10"><div>Date: {{game.dateTime}}</div>
-			  			<span ng-repeat="player in game.players">
+			  			<span ng-repeat="player in game.players" ng-init="playerId = player.id">
 			  				<!-- <div>Player: {{player.id}}, Points: {{player.points}}, PlayerName: {{GetOne(player.id)}} </div></span><br/> -->
-			  				<div>Player: {{player.id}}, Points: {{player.points}}, PlayerName: {{GetOne(player.id)}}
+			  				<div>Player: {{player.id}}, Points: {{player.points}}, PlayerName: {{players[player.id].name}} <!--{{GetOne(player.id)}}{{{playerName.name}}-->
 			  				</div>
 			  			</span>
 			  			<br/>
