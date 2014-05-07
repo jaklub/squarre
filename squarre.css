@@ -7,3 +7,28 @@
     padding-bottom: 5px;
     padding-top: 5px;
 }
+
+.game-list .row {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+.game-list-item{
+	border:1px solid;
+	border-color: gray;
+	border-radius:1px;
+	margin-top: 10px;
+	padding: 2px;
+	background-color: #FBFBFB;;
+
+}
+.game-list-date {
+	font-size: 10px;
+	color: gray;
+}
+.game-list-item-player1, .game-list-item-player2  {
+    text-align: center;
+}
+
+.game-list-item-player1-points, .game-list-item-player2-points{
+
+}

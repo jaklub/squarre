@@ -47,72 +47,95 @@
   	<div class="container" style="margin-top: 51px;">
   		<div class="squarre-template">
 			<!-- New Game-->
-  			<div>
-				<h1>New Gamee</h1>
-				<div class="row">
-					<div class="col-xs-6">	
-						<legend>Player 1</legend>
+			<div class="row">
+	  			<div class="col-xs-12 col-md-7">
+					<h1>New Gamee</h1>
+					<div class="row">
+						<div class="col-xs-6">	
+							<legend>Player 1</legend>
+						</div>	
+						<div class="col-xs-6">	
+							<legend>Player 2</legend>
+						</div>	
 					</div>	
-					<div class="col-xs-6">	
-						<legend>Player 2</legend>
+					<div class="row">
+						<div class="col-xs-6">
+							<label>Name</label>
+							<select ng-model="player1Id" class="form-control sq-new-game-player1">
+								<option value="">Player 1</option>
+								<option ng-repeat="(name, item)  in players" value="{{name}}">{{item.name}}</option>
+							</select>
+						</div>
+						<div class="col-xs-6">
+							<label>Name</label>
+							<select ng-model="player2Id" class="form-control sq-new-game-player1">
+								<option value="">Player 2</option>
+								<option ng-repeat="(name, item)  in players" value="{{name}}">{{item.name}}</option>
+							</select>
+						</div>
 					</div>	
-				</div>	
-				<div class="row">
-					<div class="col-xs-6">
-						<label>Name</label>
-						<select ng-model="player1Id" class="form-control sq-new-game-player1">
-							<option value="">Player 1</option>
-							<option ng-repeat="(name, item)  in players" value="{{name}}">{{item.name}}</option>
-						</select>
-					</div>
-					<div class="col-xs-6">
-						<label>Name</label>
-						<select ng-model="player2Id" class="form-control sq-new-game-player1">
-							<option value="">Player 2</option>
-							<option ng-repeat="(name, item)  in players" value="{{name}}">{{item.name}}</option>
-						</select>
-					</div>
-				</div>	
-				<div class="row">
-					<div class="col-xs-6">
-						<label>Points</label>
-						<select class="form-control" ng-model="player1Points" ng-options="p for p in pointsArray">
-							<option></option>
-						</select>
+					<div class="row">
+						<div class="col-xs-6">
+							<label>Points</label>
+							<select class="form-control" ng-model="player1Points" ng-options="p for p in pointsArray">
+								<option></option>
+							</select>
+						</div>
+
+						<div class="col-xs-6">
+							<label>Points</label>
+							<select class="form-control" ng-model="player2Points" ng-options="p for p in pointsArray">
+								<option></option>
+							</select>
+						</div>
 					</div>
 
-					<div class="col-xs-6">
-						<label>Points</label>
-						<select class="form-control" ng-model="player2Points" ng-options="p for p in pointsArray">
-							<option></option>
-						</select>
-					</div>
-				</div>
 
-
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="btn-groupp">
-							<button type="button" class="btn btn-sm btn-success" ng-click="saveGame($event)">Save</button>
-							<button type="button" class="btn btn-sm btn-danger" ng-click="cancelSaveGame($event)">Cancel</button>
+					<div class="row">
+						<div class="col-xs-12 col-md-7">
+							<div class="btn-groupp">
+								<button type="button" class="btn btn-sm btn-success" ng-click="saveGame($event)">Save</button>
+								<button type="button" class="btn btn-sm btn-danger" ng-click="cancelSaveGame($event)">Cancel</button>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div> <!-- /New Game-->
 			<br/>
 			<br/>
-			<div>  <!-- Game list-->
-				<ul class="list-unstyled">
-			  		<li ng-repeat="game in games | orderByPriority | orderBy: 'dateTime' : true | limitTo:10"><div>Date: {{game.dateTime}}</div>
-			  			<span ng-repeat="player in game.players" ng-init="playerId = player.id">
-			  				<!-- <div>Player: {{player.id}}, Points: {{player.points}}, PlayerName: {{GetOne(player.id)}} </div></span><br/> -->
-			  				<div>Player: {{player.id}}, Points: {{player.points}}, PlayerName: {{players[player.id].name}} <!--{{GetOne(player.id)}}{{{playerName.name}}-->
-			  				</div>
-			  			</span>
-			  			<br/>
-
-			  		</li>
-				</ul>
+			<div class="row">
+				<div class="col-xs-12 col-md-5">  <!-- Game list-->
+					<ul class="list-unstyled game-list">
+				  		<li class="game-list-item" ng-repeat="game in games | orderByPriority | orderBy: 'dateTime' : true | limitTo:10">
+				  			<div class="row">
+				  				<div class="game-list-date col-xs-6 col-md-5">
+				  					{{game.dateTime}}
+				  				</div>
+				  			</div>
+				  			<div class="row">
+					  			<div class="game-list-item-player1 col-xs-5 col-md-5">
+						  			<div class="game-list-item-player1-name">
+						  				{{players[game.players[0].id].name}} 
+						  			</div>
+						  			<div class="game-list-item-player1-points">
+						  				{{game.players[0].points}} 
+						  			</div>
+						  		</div>
+						  		<div class="game-list-item-vs col-xs-2 col-md-2">
+						  			vs
+						  		</div>	
+					  			<div class="game-list-item-player2 col-xs-5  col-md-5">
+						  			<div class="player1-name">
+						  				{{players[game.players[1].id].name}} 
+						  			</div>
+						  			<div class="game-list-item-player2-points">
+						  				{{game.players[1].points}} 
+						  			</div>
+						  		</div>
+						  	</div>
+				  		</li>
+					</ul>
+				</div>
 			</div>  <!-- /Game list-->
 
 		</div><!-- /.squarre-template -->			
@@ -129,7 +152,7 @@
     <script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.js"></script>
     <!--<script src='/ui-bootstrap-0.11.0.js'></script>-->
     <!--<script src='/ui-bootstrap-tpls-0.11.0.js'></script>-->
-    <script src='/squarre4.js'></script>
+    <script src='/squarre5.js'></script>
     <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.4.1/firebase-simple-login.js'>
 </script>
 
