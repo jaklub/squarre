@@ -10,6 +10,7 @@
 	<title>Sqarre games</title>
 	<link rel="stylesheet" href="/squarre.css">	
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 	<!--<link rel="stylesheet" href="http://bootswatch.com/cyborg/bootstrap.min.css">-->
 		
 	<!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">-->
@@ -101,19 +102,25 @@
 					</div>
 				</div>
 			</div> <!-- /New Game-->
+			<input type="number" ng-model="gamesLimit"></input><button ng-click="limitClick($event)">Limit</button>
 			<br/>
 			<br/>
 			<div class="row">
 				<div class="col-xs-12 col-md-5">  <!-- Game list-->
-					<ul class="list-unstyled game-list">
-				  		<li class="game-list-item" ng-repeat="game in games | orderByPriority | orderBy: 'dateTime' : true | limitTo:10">
+					<ul class="list-unstyled game-list" infinite-scroll='loadMoreGames($event)'>
+				  		<!--<li class="game-list-item" ng-repeat="game in games | orderByPriority | orderBy: 'dateTime' : true | limitTo:10">-->
+				  		<li class="game-list-item" ng-repeat="game in gamesWithLimit | orderByPriority | orderBy: 'dateTime' : true">
 				  			<div class="row">
 				  				<div class="game-list-date col-xs-6 col-md-5">
 				  					{{game.dateTime}}
 				  				</div>
+				  				<span class="col-xs-2 col-md-2"></span>
+				  				<a class="game-list-date col-xs-6 col-md-5" ng-click="editGame($event)">
+				  					Edit game
+				  				</a>
 				  			</div>
 				  			<div class="row">
-					  			<div class="game-list-item-player1 col-xs-5 col-md-5">
+					  			<div class="game-list-item-player1 col-xs-5 col-md-5" ng-class="evalWinnerCSS(game.players[0].points, game.players[1].points)">
 						  			<div class="game-list-item-player1-name">
 						  				{{players[game.players[0].id].name}} 
 						  			</div>
@@ -124,7 +131,7 @@
 						  		<div class="game-list-item-vs col-xs-2 col-md-2">
 						  			vs
 						  		</div>	
-					  			<div class="game-list-item-player2 col-xs-5  col-md-5">
+					  			<div class="game-list-item-player2 col-xs-5  col-md-5" ng-class="evalWinnerCSS(game.players[1].points, game.players[0].points)">
 						  			<div class="player1-name">
 						  				{{players[game.players[1].id].name}} 
 						  			</div>
@@ -152,6 +159,8 @@
     <script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.js"></script>
     <!--<script src='/ui-bootstrap-0.11.0.js'></script>-->
     <!--<script src='/ui-bootstrap-tpls-0.11.0.js'></script>-->
+
+    <script src='/ng-infinite-scroll.min.js'></script>
     <script src='/squarre5.js'></script>
     <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.4.1/firebase-simple-login.js'>
 </script>

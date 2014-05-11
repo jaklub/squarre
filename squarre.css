@@ -15,8 +15,8 @@
 .game-list-item{
 	border:1px solid;
 	border-color: gray;
-	border-radius:1px;
-	margin-top: 10px;
+/*	border-radius:1px;*/
+	margin-top: -1px;
 	padding: 2px;
 	background-color: #FBFBFB;;
 
@@ -31,4 +31,14 @@
 
 .game-list-item-player1-points, .game-list-item-player2-points{
 
+}
+
+.won{
+	background-color: blue;
+}
+.lost{
+	background-color: red;
+}
+.draw{
+	background-color: yellow;
 }

@@ -2,9 +2,10 @@
 	//var app = angular.module("squarre", ["ui.bootstrap","firebase"]);
 	//angular.module("squarre", ['ui.bootstrap',"firebase"]);
 	// var app = angular.module("squarre", ['ui.bootstrap', "firebase"])
-	var squarre = angular.module("squarre", ['firebase']);
-	squarre.factory("GamesService", ["$firebase", "$rootScope", "$timeout", function($firebase, $rootScope, $timeout) {
+	var squarre = angular.module("squarre", ['firebase', 'infinite-scroll']);
+	squarre.factory("GamesService", ["$firebase", "$rootScope", "$timeout",  function($firebase, $rootScope, $timeout) {
 			var gamesRef = new Firebase("https://squarre.firebaseio.com/games");
+			var gamesWithLimitRef = new Firebase("https://squarre.firebaseio.com/games");
 			var playersRef = new Firebase("https://squarre.firebaseio.com/players");
 			var playersNameRef = new Firebase("https://squarre.firebaseio.com/players");
 			return {
@@ -15,6 +16,13 @@
 						// console.log(JSON.stringify(snapshot.val(),null,2));
 					});
 					return $firebase(gamesRef);
+				},
+				getGamesWithLimit: function(limit) {
+					// gamesWithLimitRef.on("child_added", function(snapshot) {
+					// 	games.push(snapshot.val());
+					// 	// console.log(JSON.stringify(snapshot.val(),null,2));
+					// });
+					return $firebase(gamesRef.limit(limit));
 				},
 				addGame: function(game) {
 					gamesRef.push(game);
@@ -32,6 +40,8 @@
 		.controller("GamesController", ["$scope", "GamesService",
 			function($scope, service) {
 				$scope.players = service.getPlayers();
+				$scope.gamesLimit = 10;
+				$scope.gamesWithLimit = service.getGamesWithLimit($scope.gamesLimit);
 				$scope.games = service.getGames();
 				$scope.pointsArray = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];				
 
@@ -60,8 +70,30 @@
 
 					$scope.games.$add(newGame);
 
-				}				
+				}		
 
+				$scope.limitClick = function(e) {		
+					$scope.gamesWithLimit = service.getGamesWithLimit($scope.gamesLimit);
+				}
+				$scope.loadMoreGames  = function(e) {
+					$scope.gamesLimit = $scope.gamesLimit + 5;		
+					$scope.gamesWithLimit = service.getGamesWithLimit($scope.gamesLimit);
+				}
+				$scope.editGame  = function(e) {
+					var temp = "";
+				}
+				$scope.evalWinnerCSS = function(playerPoints, oponentPoints){
+					if(playerPoints === oponentPoints){
+						return "draw";
+					}
+					else if(playerPoints>oponentPoints){
+						return "won";
+					}
+					else if(playerPoints<oponentPoints){
+						return "lost";
+					}
+
+				}
 			}
 		]);
 
