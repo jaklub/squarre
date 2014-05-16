@@ -1,0 +1,115 @@
+body{
+
+	background-color: #484848;
+	color: #ffffff;
+
+}
+
+legend{
+	color: #ffffff;
+
+}
+
+.squarre-template{
+	margin-top: 0px;
+	padding-top: 15px;
+}
+
+.squarre-template .row {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.game-list .row {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+.game-list-item{
+	border:1px solid;
+	border-color: #696969;
+/*	border-radius:1px;*/
+	margin-top: -1px;
+	padding: 5px;
+	background-color: #FBFBFB;
+	margin-left: -15px;
+	margin-right: -15px;
+	padding-left: 15px;
+	padding-right: 15px;
+	color: #ffffff;
+	background-color: #484848;
+
+}
+.game-list-item-view{
+
+
+}
+.game-list-item-update{
+    border-top: 1px dashed #696969;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+}
+
+.game-list-date {
+	font-size: 10px;
+	color: gray;
+}
+.game-list-item-player1, .game-list-item-player2  {
+    text-align: center;
+}
+
+.game-list-item-player1-points, .game-list-item-player2-points{
+
+}
+
+.won{
+/*	background-color: blue;*/
+    font-size: large;
+    font-weight: bold;
+}
+.lost{
+/*	background-color: red;*/
+}
+.draw{
+/*	background-color: yellow;*/
+}
+
+.game-list-item-vs {
+    color: #808080;
+    font-weight: bold;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.game-list-item-update .btn.btn-sm.btn-danger {
+    float: right;
+    text-align: -moz-right;
+}
+
+/************* Angularjs *******************/
+.animate-if {
+/*
+  background: white;
+  border:1px solid black;
+  padding:10px;
+*/
+}
+
+.animate-if.ng-enter, .animate-if.ng-leave {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+
+.animate-if.ng-enter,
+.animate-if.ng-leave.ng-leave-active {
+  opacity:0;
+}
+
+.animate-if.ng-leave,
+.animate-if.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+
+

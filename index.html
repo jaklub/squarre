@@ -3,17 +3,20 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 	<title>Sqarre games</title>
-	<link rel="stylesheet" href="/squarre.css">	
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-	<!--<link rel="stylesheet" href="http://bootswatch.com/cyborg/bootstrap.min.css">-->
+	<!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">-->
+	<!--<link rel="stylesheet" href="/bootstrap-cyborg.min.css">-->
+	<!-- <link rel="stylesheet" href="/bootstrap-superhero.min.css"> -->
+	<!-- <link rel="stylesheet" href="/bootstrap-yeti.min.css"> -->
+	<!-- <link rel="stylesheet" href="/bootstrap-yeti.min.css"> -->
 		
 	<!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">-->
+	<link rel="stylesheet" href="/css/squarre.css">	
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -49,16 +52,17 @@
   		<div class="squarre-template">
 			<!-- New Game-->
 			<div class="row">
-	  			<div class="col-xs-12 col-md-7">
-					<h1>New Gamee</h1>
-					<div class="row">
+	  			<div class="col-xs-12 col-md-5">
+					<h4>New Game</h4>
+					<!-- <div class="row">
 						<div class="col-xs-6">	
 							<legend>Player 1</legend>
 						</div>	
 						<div class="col-xs-6">	
 							<legend>Player 2</legend>
 						</div>	
-					</div>	
+					</div>	 -->
+					<!-- <br/> -->
 					<div class="row">
 						<div class="col-xs-6">
 							<label>Name</label>
@@ -91,55 +95,115 @@
 						</div>
 					</div>
 
-
+					<br/>
 					<div class="row">
 						<div class="col-xs-12 col-md-7">
 							<div class="btn-groupp">
-								<button type="button" class="btn btn-sm btn-success" ng-click="saveGame($event)">Save</button>
-								<button type="button" class="btn btn-sm btn-danger" ng-click="cancelSaveGame($event)">Cancel</button>
+								<button type="button" class="btn btn-sm btn-success" ng-click="saveGame($event)">
+									<span class="glyphicon glyphicon-ok"></span> 
+										&nbsp;Create new game
+									</button>
+								<!-- <button type="button" class="btn btn-sm btn-danger" ng-click="cancelSaveGame($event)">Cancel</button> -->
 							</div>
 						</div>
 					</div>
 				</div>
 			</div> <!-- /New Game-->
-			<input type="number" ng-model="gamesLimit"></input><button ng-click="limitClick($event)">Limit</button>
 			<br/>
 			<br/>
-			<div class="row">
+			<h4>Previus games</h4>			
+			<div class="row" ng-cloak>
 				<div class="col-xs-12 col-md-5">  <!-- Game list-->
 					<ul class="list-unstyled game-list" infinite-scroll='loadMoreGames($event)'>
 				  		<!--<li class="game-list-item" ng-repeat="game in games | orderByPriority | orderBy: 'dateTime' : true | limitTo:10">-->
-				  		<li class="game-list-item" ng-repeat="game in gamesWithLimit | orderByPriority | orderBy: 'dateTime' : true">
-				  			<div class="row">
-				  				<div class="game-list-date col-xs-6 col-md-5">
-				  					{{game.dateTime}}
-				  				</div>
-				  				<span class="col-xs-2 col-md-2"></span>
-				  				<a class="game-list-date col-xs-6 col-md-5" ng-click="editGame($event)">
-				  					Edit game
-				  				</a>
-				  			</div>
-				  			<div class="row">
-					  			<div class="game-list-item-player1 col-xs-5 col-md-5" ng-class="evalWinnerCSS(game.players[0].points, game.players[1].points)">
-						  			<div class="game-list-item-player1-name">
-						  				{{players[game.players[0].id].name}} 
-						  			</div>
-						  			<div class="game-list-item-player1-points">
-						  				{{game.players[0].points}} 
-						  			</div>
-						  		</div>
-						  		<div class="game-list-item-vs col-xs-2 col-md-2">
-						  			vs
-						  		</div>	
-					  			<div class="game-list-item-player2 col-xs-5  col-md-5" ng-class="evalWinnerCSS(game.players[1].points, game.players[0].points)">
-						  			<div class="player1-name">
-						  				{{players[game.players[1].id].name}} 
-						  			</div>
-						  			<div class="game-list-item-player2-points">
-						  				{{game.players[1].points}} 
-						  			</div>
-						  		</div>
+				  		<li class="game-list-item" ng-repeat="(id,game) in gamesWithLimit | orderByPriority | orderBy: 'dateTime' : true">
+				  			<div class="game-list-item-view" ng-click="updateGame(game.$id)">
+					  			<div class="row">
+					  				<div class="game-list-date col-xs-6 col-md-5">
+					  					{{game.dateTime}}
+					  				</div>
+					  				<span class="col-xs-2 col-md-2"></span>
+					  				<!-- <a class="game-list-date col-xs-6 col-md-5" ng-click="updateGame(game.$id)">
+					  					Edit game
+					  				</a> -->
+					  			</div>
+					  			<div class="row">
+						  			<div class="game-list-item-player1 col-xs-5 col-md-5" ng-class="evalWinnerCSS(game.players[0].points, game.players[1].points)">
+							  			<div class="game-list-item-player1-name">
+							  				{{players[game.players[0].id].name}} 
+							  			</div>
+							  			<div class="game-list-item-player1-points">
+							  				{{game.players[0].points}} 
+							  			</div>
+							  		</div>
+							  		<div class="game-list-item-vs col-xs-2 col-md-2">
+							  			vs
+							  		</div>	
+						  			<div class="game-list-item-player2 col-xs-5  col-md-5" ng-class="evalWinnerCSS(game.players[1].points, game.players[0].points)">
+							  			<div class="player1-name">
+							  				{{players[game.players[1].id].name}} 
+							  			</div>
+							  			<div class="game-list-item-player2-points">
+							  				{{game.players[1].points}} 
+							  			</div>
+							  		</div>
+							  	</div>
 						  	</div>
+							<span ng-if="gameUpdateId===game.$id" class="animate-if"> <!-- Update Game-->
+								<div class="game-list-item-update">								
+									<!-- <div class="row">
+										<div class="col-xs-6">	
+											<legend>Player 1</legend>
+										</div>	
+										<div class="col-xs-6">	
+											<legend>Player 2</legend>
+										</div>	
+									</div>	 -->
+									<div class="row">
+										<div class="col-xs-6">
+											<label>Name</label>
+											<select ng-model="$root.updatePlayer1Id" class="form-control sq-update-game-player1">
+												<option value="">Player 1</option>
+												<option ng-repeat="(name, item)  in players" value="{{name}}" ng-selected="name == $root.updatePlayer1Id" >{{item.name}}</option>
+											</select>
+										</div>
+										<div class="col-xs-6">
+											<label>Name</label>
+											<select ng-model="$root.updatePlayer2Id" class="form-control sq-update-game-player1">
+												<option value="">Player 2</option>
+												<option ng-repeat="(name, item)  in players" value="{{name}}" ng-selected="name == $root.updatePlayer2Id">{{item.name}}</option>
+											</select>
+										</div>
+									</div>	
+									<div class="row">
+										<div class="col-xs-6">
+											<label>Points</label>
+											<select class="form-control" ng-model="$root.updatePlayer1Points" ng-options="p for p in pointsArray" ng-selected="p == $root.updatePlayer1Points">
+												<option></option>
+											</select>
+										</div>
+
+										<div class="col-xs-6">
+											<label>Points</label>
+											<select class="form-control" ng-model="$root.updatePlayer2Points" ng-options="p for p in pointsArray">
+												<option></option>
+											</select>
+										</div>
+									</div>
+									<br/>
+									<div class="row">
+										<div class="col-xs-12 col-md-12">
+											<div class="btn-groupp">
+												<button type="button" class="btn btn-sm btn-success" ng-click="saveUpdateGame(game.$id)">
+													<span class="glyphicon glyphicon-ok"></span>&nbsp;Update game</button>&nbsp;
+												<!-- <button type="button" class="btn btn-sm btn-danger" ng-click="cancelUpdateGame($event)">Cancel</button> -->
+												<button type="button" class="btn btn-sm btn-danger" ng-click="deleteGame(game.$id)">
+												<span class="glyphicon glyphicon-remove"></span>&nbsp;Delete game</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</span><!-- /Update Game-->
 				  		</li>
 					</ul>
 				</div>
@@ -156,12 +220,14 @@
     <!--<script type='text/javascript' src='//code.angularjs.org/X.Y.Z/angular-route.js'></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
     <script src='https://cdn.firebase.com/js/client/1.0.11/firebase.js'></script>
+    <script src='//code.angularjs.org/1.2.10/angular-animate.js'></script>
     <script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.js"></script>
+
     <!--<script src='/ui-bootstrap-0.11.0.js'></script>-->
     <!--<script src='/ui-bootstrap-tpls-0.11.0.js'></script>-->
 
-    <script src='/ng-infinite-scroll.min.js'></script>
-    <script src='/squarre5.js'></script>
+    <script src='/js/ng-infinite-scroll.min.js'></script>
+    <script src='/js/squarre-games.js'></script>
     <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.4.1/firebase-simple-login.js'>
 </script>
 
