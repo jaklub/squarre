@@ -87,7 +87,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 9747,
+				"buffer_size": 9816,
 				"line_ending": "Unix"
 			}
 		},
@@ -139,15 +139,7 @@
 			"file": "players.html",
 			"settings":
 			{
-				"buffer_size": 3915,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "squarre3.json",
-			"settings":
-			{
-				"buffer_size": 1044,
+				"buffer_size": 3974,
 				"line_ending": "Unix"
 			}
 		},
@@ -163,14 +155,6 @@
 			}
 		},
 		{
-			"file": "index3.html",
-			"settings":
-			{
-				"buffer_size": 5011,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"contents": "	//var app = angular.module(\"squarre\", [\"ui.bootstrap\",\"firebase\"]);\n	//angular.module(\"squarre\", ['ui.bootstrap',\"firebase\"]);\n	var app = angular.module(\"squarre\", ['ui.bootstrap', \"firebase\"]);\n\n	function GamesController($scope, $firebase) {\n		var playersRef = new Firebase(\"https://squarre.firebaseio.com/players\");\n		var gamesRef = new Firebase(\"https://squarre.firebaseio.com/games\");\n\n\n/*\n		var auth = new FirebaseSimpleLogin(gamesRef, function(error, user) {\n			if (error) {\n				// an error occurred while attempting login\n				alert(error);\n			} else if (user) {\n				// user authenticated with Firebase\n				console.log('User ID: ' + user.id + ', Provider: ' + user.provider + ', e-mail: ' + user.email);\n			} else {\n				auth.login('google');\n			}\n		});\n\n		var auth = new FirebaseSimpleLogin(playersRef, function(error, user) {\n			if (error) {\n				// an error occurred while attempting login\n				alert(error);\n			} else if (user) {\n				// user authenticated with Firebase\n				console.log('User ID: ' + user.id + ', Provider: ' + user.provider + ', e-mail: ' + user.email);\n			} else {\n				auth.login('google');\n			}\n		});\n*/\n		// attempt to log the user in with your preferred authentication provider\n		//auth.logout();\n		$scope.players = $firebase(playersRef);\n		$scope.games = $firebase(gamesRef);\n\n\n		$scope.pointsArray = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];\n		\n\n\n		$scope.oneAtATime = true;\n		$scope.status = {\n			isFirstOpen: false,\n			isFirstDisabled: false\n		};\n\n		$scope.saveGame = function(e) {\n			var newDateTime = getDateTime();\n			var newId = -1;\n			var player1 = $scope.player1Id;\n			var player2 = $scope.player2Id;\n			var points1 = $scope.player1Points;\n			var points2 = $scope.player2Points;\n\n			var newGame = {\n				\"id\": newId,\n				\"dateTime\": newDateTime,\n				\"players\": [{\n					\"id\": player1,\n					\"points\": points1\n				}, {\n					\"id\": player2,\n					\"points\": points2\n				}]\n			};\n\n			console.log(\"saveGame(), player1: \" + player1 + \", player2:\" + player2);\n			console.log(console.log(JSON.stringify(newGame, null, 2)));\n\n			//$scope.games.$add(newGame);\n\n		}\n\n		$scope.cancelSaveGame = function(e) {\n			console.log(cancelSaveGame());\n		}\n\n	}\n\n\n	function getDateTime() {\n		var now = new Date();\n		var year = now.getFullYear();\n		var month = now.getMonth() + 1;\n		var day = now.getDate();\n		var hour = now.getHours();\n		var minute = now.getMinutes();\n		var second = now.getSeconds();\n		if (month.toString().length == 1) {\n			var month = '0' + month;\n		}\n		if (day.toString().length == 1) {\n			var day = '0' + day;\n		}\n		if (hour.toString().length == 1) {\n			var hour = '0' + hour;\n		}\n		if (minute.toString().length == 1) {\n			var minute = '0' + minute;\n		}\n		if (second.toString().length == 1) {\n			var second = '0' + second;\n		}\n		var dateTime = year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;\n		return dateTime;\n	}",
 			"file": "squarre2.js",
 			"file_size": -1,
@@ -178,30 +162,6 @@
 			"settings":
 			{
 				"buffer_size": 2901,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "index2.html",
-			"settings":
-			{
-				"buffer_size": 5021,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "squarre.js",
-			"settings":
-			{
-				"buffer_size": 3231,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "squarre2.json",
-			"settings":
-			{
-				"buffer_size": 1044,
 				"line_ending": "Unix"
 			}
 		},
@@ -259,6 +219,11 @@
 	},
 	"file_history":
 	[
+		"/Users/jakob/Dev/squarre/squarre2.json",
+		"/Users/jakob/Dev/squarre/squarre.js",
+		"/Users/jakob/Dev/squarre/index2.html",
+		"/Users/jakob/Dev/squarre/index3.html",
+		"/Users/jakob/Dev/squarre/squarre3.json",
 		"/Users/jakob/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/jakob/Library/Application Support/Sublime Text 3/Packages/User/firebase.sublime-build"
 	],
@@ -316,15 +281,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9747,
+						"buffer_size": 9816,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3903,
-								3903
+								0,
+								0
 							]
 						],
 						"settings":
@@ -416,7 +381,9 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 236.0,
@@ -450,7 +417,7 @@
 						"translation.y": 1109.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -459,35 +426,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3915,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1656,
-								1656
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "squarre3.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1044,
+						"buffer_size": 3974,
 						"regions":
 						{
 						},
@@ -500,19 +439,17 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "squarre3.js",
 					"semi_transient": false,
 					"settings":
@@ -537,39 +474,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "index3.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5011,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4704,
-								4704
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1149.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
+					"buffer": 7,
 					"file": "squarre2.js",
 					"semi_transient": false,
 					"settings":
@@ -594,97 +503,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "index2.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5021,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3841,
-								3841
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 976.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "squarre.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3231,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2531,
-								2531
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
-					"file": "squarre2.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1044,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								228,
-								228
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
+					"buffer": 8,
 					"file": "squarre.sublime-project",
 					"semi_transient": false,
 					"settings":
@@ -708,7 +531,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 8,
 					"type": "text"
 				}
 			]
