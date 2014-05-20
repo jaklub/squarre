@@ -25,3 +25,14 @@
 		var dateTime = year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
 		return dateTime;
 	}
+
+	function defineExtensionMethods(){
+		if(typeof(Array.prototype.last) === "undefined"){
+			console.log("defining Array.last()")
+			Array.prototype.last = function() {return this[this.length-1];}
+		}else{
+			console.log("Array.last() already defined")
+
+		}
+
+	}
