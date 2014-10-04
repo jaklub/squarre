@@ -10,7 +10,7 @@
 			var playersNameRef = new Firebase("https://squarre.firebaseio.com/players");
 			return {
 				getGames: function() {
-					var deferred = new jQuery.Deferred()
+					var deferred = new jQuery.Deferred();
 					var games = [];
 					gamesRef.on("value", function(snapshot) {
 						games.push(snapshot.val());
@@ -178,12 +178,13 @@ function setChartData(containerId, options, categories , series){
 	            text: 'ELO rating'
 	        },
 	        xAxis: {
-	                categories: []
+	                categories: [],
+	                 tickInterval: 10
 	        },
 	        yAxis: {
 	            title: {
 	                text: 'Rating'
-	            },
+	            }
 	            // min: 0
 	        },
 			tooltip: {
@@ -224,7 +225,7 @@ $(function () {
         },
         title: {
             text: 'ELO rating'
-        },
+        },      
         xAxis: {
                 // type: 'datetime',
                 // labels: {

@@ -16,7 +16,7 @@
 	<!-- <link rel="stylesheet" href="/bootstrap-yeti.min.css"> -->
 		
 	<!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">-->
-	<link rel="stylesheet" href="/css/squarre.css">	
+	<link rel="stylesheet" href="css/squarre.css">
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -27,7 +27,7 @@
   </head>
   <body ng-controller="StatsController">
 
-  	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  	<div class="navbar navbar-inverse navbar-fixed-top_" role="navigation">
   		<div class="container">
   			<div class="navbar-header">
   				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -36,11 +36,11 @@
   					<span class="icon-bar"></span>
   					<span class="icon-bar"></span>
   				</button>
-  				<a class="navbar-brand" href="#">Squarre</a>
+  				<a class="navbar-brand" href="index.html">Squarre</a>
   			</div>
   			<div class="collapse navbar-collapse">
   				<ul class="nav navbar-nav">
-  					<li><a href="index.html">Games</a></li>
+  					<li><a href="games.html">Games</a></li>
   					<li><a href="players.html">Players</a></li>
   					<li class="active"><a href="#">Statistics</a></li>
   				</ul>
@@ -48,14 +48,11 @@
   		</div>
   	</div>
 
-  	<div class="container" style="margin-top: 51px;">
+  	<!-- <div class="container" style="margin-top: 51px;"> -->
+  	<div class="container" style="margin-top: -34px;">
   		<div class="squarre-template">
 
-			<div id="container-elo" style="width:100%; height:400px;"></div>
-
-			<div id="container-test" style="width:100%; height:400px;"></div>
-
-			<div id="container-example" style="width:100%; height:400px;"></div>
+			<div id="container-elo" style="width:100%; height:300px;"></div>
 
 		</div><!-- /.squarre-template -->			
 	</div><!-- /.container -->
@@ -75,10 +72,10 @@
     <!--<script src='/ui-bootstrap-tpls-0.11.0.js'></script>-->
 
     <!--<script src='/js/ng-infinite-scroll.min.js'></script>-->
-    <script src='/js/highcharts.js'></script> 
-    <script src='/js/highcharts-gray.js_'></script> 
-    <script src='/js/squarre-helper.js'></script>
-    <script src='/js/squarre-stats.js'></script>
+    <script src='lib/highcharts.js'></script>
+    <!--<script src='lib/highcharts-gray.js'></script>-->
+    <script src='js/squarre-helper.js'></script>
+    <script src='js/squarre-stats.js'></script>
     <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.4.1/firebase-simple-login.js'>
 </script>
 
